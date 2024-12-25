@@ -1,0 +1,38 @@
+.pelicula-imagen {
+    height: 400px;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+  }
+  
+  .pelicula-titulo {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .pelicula-fecha {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 15px;
+  }
+  
+  .calificacion-container {
+    margin-bottom: 15px;
+  }
+  
+  .botones-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .btn-custom {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 5px;
+  }
+  
+  .image-container {
+    position: relative;
+    overflow: hidden;
+  }
+  

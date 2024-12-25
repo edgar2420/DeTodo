@@ -1,0 +1,72 @@
+.detalle-pelicula-container {
+    background-color: #141414;
+    color: #fff;
+    min-height: 100vh;
+  }
+  
+  .banner {
+    position: relative;
+    text-align: center;
+  }
+  
+  .banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .banner-content {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    text-align: center;
+    padding-top: 150px;
+  }
+  
+  .banner-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+  }
+  
+  .banner-rating {
+    font-size: 1.5rem;
+    margin-top: 10px;
+  }
+  
+  .sinopsis {
+    font-size: 1.2rem;
+  }
+  
+  .persona-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px;
+  }
+  
+  .persona-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .persona-card p {
+    margin: 0;
+    color: #fff;
+  }
+  
+  .actores .persona-card {
+    width: 150px;
+  }
+  
+  button {
+    font-size: 1rem;
+    background-color: #e50914;
+    border: none;
+  }
+  
