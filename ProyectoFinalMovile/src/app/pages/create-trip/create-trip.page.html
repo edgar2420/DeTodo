@@ -1,0 +1,85 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Crear Viaje</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Crear Viaje</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <form (ngSubmit)="createTrip()">
+    <ion-item>
+      <ion-label position="floating">Nombre del Viaje</ion-label>
+      <ion-input [(ngModel)]="tripData.name" name="name" required></ion-input>
+    </ion-item>
+
+    <!-- Mapa de Google para seleccionar origen y destino -->
+    <div style="height: 300px;">
+      <google-map
+        height="100%"
+        width="100%"
+        [center]="{ lat: mapCenterLat, lng: mapCenterLng }"
+        [zoom]="zoom"
+        (mapClick)="onMapClick($event)">
+        <map-marker
+          *ngIf="tripData.latOrigin && tripData.lngOrigin"
+          [position]="{ lat: tripData.latOrigin, lng: tripData.lngOrigin }"
+          label="Origen">
+        </map-marker>
+        <map-marker
+          *ngIf="tripData.latDestination && tripData.lngDestination"
+          [position]="{ lat: tripData.latDestination, lng: tripData.lngDestination }"
+          label="Destino">
+        </map-marker>
+      </google-map>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating">Fecha</ion-label>
+      <ion-datetime display-format="YYYY-MM-DD" [(ngModel)]="tripData.date" name="date" required></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Precio</ion-label>
+      <ion-input type="number" [(ngModel)]="tripData.price" name="price" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Asientos Disponibles</ion-label>
+      <ion-input type="number" [(ngModel)]="tripData.seats" name="seats" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Hora de Inicio</ion-label>
+      <ion-datetime display-format="HH:mm" [(ngModel)]="tripData.startTime" name="startTime" required></ion-datetime>
+    </ion-item>
+
+    <!-- Mapa de Google para seleccionar puntos de recogida -->
+    <div style="height: 300px;">
+      <google-map
+        height="100%"
+        width="100%"
+        [center]="{ lat: mapCenterLat, lng: mapCenterLng }"
+        [zoom]="zoom"
+        (mapClick)="onPickupMapClick($event)">
+        <map-marker
+          *ngFor="let stop of tripData.stops"
+          [position]="{ lat: stop.lat, lng: stop.lng }"
+          [label]="stop.time">
+        </map-marker>
+      </google-map>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating">Hora de Recogida</ion-label>
+      <ion-datetime display-format="HH:mm" #pickupTime></ion-datetime>
+    </ion-item>
+    <ion-button expand="full" (click)="addStop()" class="ion-margin-top">Añadir Punto de Recogida</ion-button>
+
+    <ion-button expand="full" type="submit" class="ion-margin-top">Crear Viaje</ion-button>
+  </form>
+</ion-content>

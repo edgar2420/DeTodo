@@ -1,0 +1,71 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Detalles del Viaje</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="endTrip()">
+        Finalizar Viaje
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Detalles del Viaje</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card *ngIf="tripDetails">
+    <ion-card-header>
+      <ion-card-title>{{ tripDetails.name }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>Fecha:</strong> {{ tripDetails.date | date:'shortDate' }}</p>
+      <p><strong>Hora de Inicio:</strong> {{ tripDetails.startTime | date:'shortTime' }}</p>
+      <p><strong>Origen:</strong> {{ tripDetails.latOrigin }}, {{ tripDetails.lngOrigin }}</p>
+      <p><strong>Destino:</strong> {{ tripDetails.latDestination }}, {{ tripDetails.lngDestination }}</p>
+      <p><strong>Precio:</strong> {{ tripDetails.price }}</p>
+      <p><strong>Asientos Disponibles:</strong> {{ tripDetails.totalSeats - tripDetails.usedSeats }}</p>
+      <p><strong>Chofer:</strong> {{ tripDetails.driver.fullname }}</p>
+      <p><strong>Email del Chofer:</strong> {{ tripDetails.driver.email }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="tripDetails && tripDetails.stops && tripDetails.stops.length">
+    <ion-card-header>
+      <ion-card-title>Paradas</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let stop of tripDetails.stops">
+          <p><strong>Latitud:</strong> {{ stop.lat }}</p>
+          <p><strong>Longitud:</strong> {{ stop.lng }}</p>
+          <p><strong>Hora:</strong> {{ stop.time | date:'shortTime' }}</p>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <div style="height: 400px; margin: 20px;">
+    <google-map
+      height="100%"
+      width="100%"
+      [center]="{ lat: mapCenterLat, lng: mapCenterLng }"
+      [zoom]="zoom"
+      (mapClick)="onMapClick($event)">
+      <map-marker
+        *ngFor="let stop of tripDetails.stops"
+        [position]="{ lat: stop.lat, lng: stop.lng }"
+        label="Stop">
+      </map-marker>
+      <map-marker
+        *ngIf="selectedPickupLat && selectedPickupLng"
+        [position]="{ lat: selectedPickupLat, lng: selectedPickupLng }"
+        label="Pickup">
+      </map-marker>
+    </google-map>
+  </div>
+
+  <ion-button expand="full" (click)="leavePickupPoint()">Dejando Punto de Recogida</ion-button>
+</ion-content>

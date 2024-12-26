@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Seleccionar Ubicación</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div style="height: 100%;">
+    <google-map
+      height="100%"
+      width="100%"
+      [center]="{ lat: lat, lng: lng }"
+      [zoom]="zoom"
+      (mapClick)="mapClicked($event)">
+      <map-marker
+        *ngIf="selectedLat && selectedLng"
+        [position]="{ lat: selectedLat, lng: selectedLng }">
+      </map-marker>
+    </google-map>
+  </div>
+
+  <ion-button expand="full" (click)="confirmLocation()">Confirmar Ubicación</ion-button>
+</ion-content>

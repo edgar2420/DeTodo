@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Viajes Finalizados</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="close()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let trip of trips" class="trip-item">
+      <ion-avatar slot="start">
+        <ion-icon name="checkmark-circle-outline" class="check-icon"></ion-icon>
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ trip.name }}</h2>
+        <p><ion-icon name="calendar-outline"></ion-icon> Fecha: {{ trip.date | date:'shortDate' }}</p>
+        <p><ion-icon name="time-outline"></ion-icon> Hora de Inicio: {{ trip.startTime | date:'shortTime' }}</p>
+        <p><ion-icon name="location-outline"></ion-icon> Origen: {{ trip.latOrigin }}, {{ trip.lngOrigin }}</p>
+        <p><ion-icon name="flag-outline"></ion-icon> Destino: {{ trip.latDestination }}, {{ trip.lngDestination }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

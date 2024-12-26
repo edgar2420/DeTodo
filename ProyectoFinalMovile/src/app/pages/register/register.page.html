@@ -1,0 +1,63 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Register</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="register-wrapper">
+    <ion-card class="register-card">
+      <ion-card-header>
+        <div class="avatar">
+          <ion-icon name="person-add-outline"></ion-icon>
+        </div>
+      </ion-card-header>
+      <ion-card-content>
+        <form (ngSubmit)="onClick()">
+          <ion-item>
+            <ion-label position="floating">Nombre Completo</ion-label>
+            <ion-input [(ngModel)]="formData.fullname" name="fullname" required></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input type="email" [(ngModel)]="formData.email" name="email" required></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input type="password" [(ngModel)]="formData.password" name="password" required></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Marca del Vehículo</ion-label>
+            <ion-input [(ngModel)]="formData.vehicle_brand" name="vehicle_brand" required></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Modelo del Vehículo</ion-label>
+            <ion-input [(ngModel)]="formData.vehicle_model" name="vehicle_model" required></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Color del Vehículo</ion-label>
+            <ion-input [(ngModel)]="formData.vehicle_color" name="vehicle_color" required></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Placa del Vehículo</ion-label>
+            <ion-input [(ngModel)]="formData.vehicle_plate" name="vehicle_plate" required></ion-input>
+          </ion-item>
+
+          <ion-button expand="full" type="submit" class="ion-margin-top">Registrarse</ion-button>
+        </form>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

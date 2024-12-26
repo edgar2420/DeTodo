@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Información del Chofer</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Información del Chofer</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="info-wrapper">
+    <ion-card *ngIf="driverInfo" class="info-card">
+      <ion-card-header>
+        <ion-card-title>{{ driverInfo.fullname }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p><ion-icon name="mail-outline"></ion-icon> <strong>Email:</strong> {{ driverInfo.email }}</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card *ngIf="vehicleInfo" class="info-card">
+      <ion-card-header>
+        <ion-card-title>Información del Vehículo</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p><ion-icon name="car-sport-outline"></ion-icon> <strong>Marca:</strong> {{ vehicleInfo.brand }}</p>
+        <p><ion-icon name="pricetag-outline"></ion-icon> <strong>Modelo:</strong> {{ vehicleInfo.model }}</p>
+        <p><ion-icon name="color-palette-outline"></ion-icon> <strong>Color:</strong> {{ vehicleInfo.color }}</p>
+        <p><ion-icon name="barcode-outline"></ion-icon> <strong>Placa:</strong> {{ vehicleInfo.plate }}</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

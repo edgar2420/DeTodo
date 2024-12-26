@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Mis Viajes</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/driver-info">
+        <ion-icon slot="icon-only" name="person-circle-outline"></ion-icon>
+      </ion-button>
+      <ion-button (click)="openFinalizedTrips()">
+        <ion-icon slot="icon-only" name="checkmark-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Mis Viajes</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="header-button">
+    <ion-button expand="block" (click)="createTrip()" class="create-trip-button">
+      Crear Nuevo Viaje
+    </ion-button>
+  </div>
+
+  <ion-list>
+    <ion-item *ngFor="let trip of trips" class="trip-item">
+      <ion-avatar slot="start">
+        <ion-icon name="car-sport" class="car-icon"></ion-icon>
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ trip.name }}</h2>
+        <p><ion-icon name="calendar-outline"></ion-icon> Fecha: {{ trip.date | date:'shortDate' }}</p>
+        <p><ion-icon name="time-outline"></ion-icon> Hora de Inicio: {{ trip.startTime | date:'shortTime' }}</p>
+        <p><ion-icon name="location-outline"></ion-icon> Origen: {{ trip.latOrigin }}, {{ trip.lngOrigin }}</p>
+        <p><ion-icon name="flag-outline"></ion-icon> Destino: {{ trip.latDestination }}, {{ trip.lngDestination }}</p>
+      </ion-label>
+      <ion-button expand="block" (click)="startTrip(trip.id)" class="start-trip-button">
+        Iniciar
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
