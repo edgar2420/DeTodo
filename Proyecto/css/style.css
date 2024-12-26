@@ -1,0 +1,398 @@
+/* Plataforma de Cursos
+Estudiante:  
+Docente: Ing. José Carlos Gutierrez
+Materia : Ingeniería Web I 
+Universidad NUR */
+* {
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+  }
+
+body {
+  font-family: Open Sans;
+  margin: 0;
+  max-width: 1024px;
+  margin: 0 auto; /* Centrar el sitio web */
+}
+
+header {
+  background-color: #fff;
+  color: #fff;
+  padding: 15px 0;
+}
+a
+{
+  text-decoration: none;
+  color: #2d2f31;
+}
+button
+{
+  background-color: transparent;
+  border:none;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+.contenedor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#seccion-1
+{
+  background-image: url('../img/hero-fondo-inicio.jpg');
+  background-position: center center;
+  background-size: cover;
+  height: 350px;
+}
+.logo {
+  font-size: 24px;
+}
+
+#menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+#menu a
+{
+  text-decoration: none;
+  color: #2d2f31;
+}
+
+#menu a:hover
+{
+  text-decoration: none;
+  color: #004AAD;
+}
+
+#menu li {
+  list-style: none;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+#menu-toggle {
+  display: none; /* Ocultar botón por defecto */
+  cursor: pointer;
+}
+
+.icon-menu {
+  font-size: 20px;
+}
+
+/* Estilos de botones */
+
+#btn-normal
+{
+  color: #fff;
+  background-color: #004AAD;
+  border-radius: 25px;
+  border: none;
+  padding: 10px 25px;
+  margin-top: 25px;
+}
+#btn-normal:hover
+{
+  background-color: transparent;
+  border: 1px solid #004AAD;
+  color: #004AAD;
+}
+
+.botones-header-responsivo
+{
+  display: none;
+  cursor: pointer;
+}
+
+#btn-inicio-sesion a
+{
+  background-color: transparent;
+  border-radius: 25px;
+  border: 1px solid #004AAD;
+  padding: 10px 25px;
+}
+
+#btn-inicio-sesion a:hover /*  Cambiar de color el boton al poner el cursor encima */
+{
+  color: #fff;
+  background-color: #004AAD;
+}
+
+#btn-registro a
+{
+  color: #fff;
+  background-color: #004AAD;
+  border-radius: 25px;
+  border: none;
+  padding: 10px 25px;
+}
+
+
+#btn-registro a:hover /*  Cambiar de color el boton al poner el cursor encima */
+{
+  background-color: transparent;
+  border: 1px solid #004AAD;
+  color: #004AAD;
+}
+
+/* Estilos para las secciones */
+
+section {
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.contenedor-seccion {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 25px;
+  justify-content: space-between !important;
+}
+
+.columna {
+  flex: 1; /* Que cada columna ocupe la mitad del espacio disponible */
+  padding: 10px; /* Espacio interno */
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* Estilos para el footer */
+
+footer {
+  background-color: #f0f0f0;
+  text-align: center;
+  padding: 15px 0;
+}
+
+.redes-sociales li {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+/* Estilos responsive (media queries) */
+
+@media (max-width: 768px) {
+#menu {
+    display: block;/* Ocultar menú en pantallas pequeñas */
+}
+/*#menu-toggle {
+  display: block;  Mostrar botón por defecto 
+  }*/
+.botones-header-responsivo
+{
+  width: 100%;
+  display: block !important;
+  height: 50px;
+  align-content: center;
+  text-align: center;
+}
+.botones-header
+{
+  display: none;
+}
+#seccion-1
+{
+ background-size: cover; 
+ height: 250px;
+ bottom: 20px;
+}
+.contenedor-seccion 
+{
+ flex-direction: column; /* Apilar las columnas en vertical */
+}
+
+.columna 
+{
+    flex: 1; /* Que cada columna ocupe todo el ancho disponible */
+    margin-bottom: 20px; /* Espacio entre columnas */
+}
+}
+
+/* Codigo para contenio de 5 columnas  */
+
+.column5 {
+    flex: 1 0 25%; /* Ajustar la proporción de ancho de las columnas */
+    box-sizing: border-box; /* Incluir el relleno y el borde en el ancho */
+    padding: 10px; /* Añadir relleno a las columnas */
+    border: 1px solid #ccc; /* Añadir un borde opcional */
+    text-align: center; /* Alinear el texto al centro */
+    margin-bottom: 25px;
+}
+
+/* Estilos responsivos */
+
+@media (max-width: 768px) {
+    .column5 {
+        flex: 1 0 50%; /* Ajustar la proporción de ancho para pantallas pequeñas */
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .column5 {
+        flex: 1 0 100%; /* Cada columna ocupa el ancho completo en pantallas muy pequeñas */
+        margin-bottom: 25px;
+    }
+}
+
+/* Importacion de fuentes externas  */
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 300 to 800
+
+.open-sans-<uniquifier> {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+hl {
+    font-size: 30px !important;
+    line-height: 1.25;
+    letter-spacing: -.016rem;
+    max-width: 36em;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* ESTILOS PAGINA LISTADO DE CURSOS */
+
+/* General styles */
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.courses {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.course {
+  width: calc(33% - 20px); /* Adjust width based on number of columns */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+/* CURSO ESTILOS */
+
+.course-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.course-info img {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.course-info h2 {
+  margin: 0;
+}
+
+.description {
+  margin: 0;
+}
+
+.lessons {
+  margin-bottom: 20px;
+}
+
+.lessons h3 {
+  margin-bottom: 10px;
+}
+
+.lessons ul {
+  list-style: none;
+  padding: 0;
+}
+
+.lessons li {
+  margin-bottom: 5px;
+}
+
+/* Estilos de formulario de inicio de sesion  */
+
+.login-form {
+  position: absolute; /* Position the form absolutely */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust for margins */
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 25px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+

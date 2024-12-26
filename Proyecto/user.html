@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1024, initial-scale=1.0">
+  <title>CLASS NUR - Perfil de Usuario</title>
+  <link rel="stylesheet" href="css/style_user.css">
+  <!-- Fuentes externas llamadas desde Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <script src="js/script.js"></script>
+</head>
+<body>
+  <main>
+    <section id="seccion-2">
+      <div class="container">
+        <nav class="sidebar">
+          <a href="index.html" class="logo"><img src="/img/logo-cursos.jpg" alt="Logo Cursos Online" width="200"></a>
+          <ul class="menu">
+            <li><a href="#opcion1">Perfil</a></li>
+            <li><a href="#opcion2">Mis Cursos</a></li>
+          </ul>
+        </nav>
+
+        <main class="content">
+          <div id="opcion1" class="content-section active">
+            <h2>Mi Perfil</h2>
+            <img src="/img/imagen-1.jpg" alt="Logo Cursos Online" style="width: 50%;">
+            <h2>Perfil de Usuario</h2>
+            <p>Nombre completo: John Doe</p>
+            <p>Email: johndoe@example.com</p>
+            <p>Teléfono: +591-456-7890</p>
+          </div>
+
+          <div id="opcion2" class="content-section">
+            <h2>Mis Cursos</h2>
+            <h3>Listado de Materias</h3>
+            <div id="materias-table-container">
+              <div class="materia">
+                <img src="img/matematicas.jpg" alt="Matemáticas" />
+                <h3>Matemáticas</h3>
+                <p>Introducción a los conceptos básicos de las matemáticas, incluyendo álgebra, geometría y trigonometría.</p>
+                <div class="progreso">
+                  <div class="progreso-bar" style="width: 70%;"></div>
+                </div>
+              </div>
+              <div class="materia">
+                <img src="img/fisica.jpg" alt="Física" />
+                <h3>Física</h3>
+                <p>Estudio de las leyes fundamentales del movimiento, la energía y la materia.</p>
+                <div class="progreso">
+                  <div class="progreso-bar" style="width: 55%;"></div>
+                </div>
+              </div>
+              <div class="materia">
+                <img src="img/quimica.jpg" alt="Química" />
+                <h3>Química</h3>
+                <p>Exploración de la composición, estructura y propiedades de la materia a nivel atómico y molecular.</p>
+                <div class="progreso">
+                  <div class="progreso-bar" style="width: 62%;"></div>
+                </div>
+              </div>
+            </div>
+
+            <h2>Inscripción a Cursos Disponibles</h2>
+            <ul id="inscripcion">
+              <li>
+                <img src="/img/imagen-1.jpg" alt="Curso 1" style="width: 100px;">
+                <div>Título curso 1</div>
+                <div><button id="btn-normal" style="margin-top: 25px;"><a href="#">Inscribir curso 1</a></button></div>
+              </li>
+              <li>
+                <img src="/img/imagen-1.jpg" alt="Curso 2" style="width: 100px;">
+                <div>Título curso 2</div>
+                <div><button id="btn-normal" style="margin-top: 25px;"><a href="#">Inscribir curso 2</a></button></div>
+              </li>
+              <li>
+                <img src="/img/imagen-1.jpg" alt="Curso 3" style="width: 100px;">
+                <div>Título curso 3</div>
+                <div><button id="btn-normal" style="margin-top: 25px;"><a href="#">Inscribir curso 3</a></button></div>
+              </li>
+            </ul>
+          </div>
+        </main>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

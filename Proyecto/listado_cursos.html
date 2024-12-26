@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1024, initial-scale=1.0">
+  <title>CLASS NUR - Listado de cursos</title>
+  <link rel="stylesheet" href="css/style.css"> <!-- archivo con estilos principal -->
+  <!-- Fuentes externas llamadas desde Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <script src="js/script.js"></script>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="listado_cursos.html">Cursos</a></li>
+        <li><a href="login.html">Iniciar sesión</a></li>
+        <li><a href="registro.html">Registrarse</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <section id="seccion-1">
+      <div class="contenedor-seccion" style="display: flow;">
+        <h1>LISTADO DE CURSOS</h1>
+        <p>Encuentra en este sector el curso que buscas.</p>
+      </div>
+    </section>
+
+    <section id="seccion-2">
+      <div class="contenedor-seccion">
+        <div class="container">
+          <h2>Filtro de cursos</h2>
+          <form action="listado_cursos.html" method="get">
+            <label for="category">Categorías:</label>
+            <select id="category" name="category">
+              <option value="">Todas las categorías</option>
+              <option value="Diseño">Diseño</option>
+              <option value="Desarrollo">Desarrollo</option>
+              <option value="Marketing">Marketing</option>
+              <option value="Informativa y Software">Informática y Software</option>
+              <option value="Desarrollo Personal">Desarrollo Personal</option>
+            </select>
+            <button id="btn-normal" type="submit">Filtrar</button>
+          </form>
+
+          <div class="courses">
+            <div class="course">
+              <h2><a href="curso1.html">Introducción a Diseño</a></h2>
+              <p>Texto explicativo.</p>
+              <p>Categoria: Diseño</p>
+            </div>
+            <div class="course">
+              <h2><a href="curso11.html">Contenido 1 a Diseño</a></h2>
+              <p>Texto explicativo.</p>
+              <p>Categoria: Diseño</p>
+            </div>
+            <div class="course">
+              <h2><a href="curso2.html">Introducción a Desarrollo</a></h2>
+              <p>Texto explicativo.</p>
+              <p>Categoria: Desarrollo</p>
+            </div>
+            <div class="course">
+              <h2><a href="curso3.html">Introducción a Marketing</a></h2>
+              <p>Texto explicativo.</p>
+              <p>Categoria: Marketing</p>
+            </div>
+            <div class="course">
+              <h2><a href="curso4.html">Introducción a Informática y Software</a></h2>
+              <p>Texto explicativo.</p>
+              <p>Categoria: Informática y Software</p>
+            </div>
+            <div class="course">
+              <h2><a href="curso5.html">Introducción a Desarrollo Personal</a></h2>
+              <p>Texto explicativo.</p>
+              <p>Categoria: Desarrollo Personal</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Nuestro Sitio Web. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>

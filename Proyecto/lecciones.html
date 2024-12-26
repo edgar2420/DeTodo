@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1024, initial-scale=1.0">
+  <title>CLASS NUR - Perfil de Usuario</title>
+  <link rel="stylesheet" href="css/style_user.css"> <!-- archivo con estilos principal -->
+  <!-- Fuentes externas llamadas desde Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <script src="js/script.js"></script>
+</head>
+<body>
+  <main>
+    <section id="seccion-2">
+      <div class="container">
+        <nav class="sidebar">
+          <a href="index.html" class="logo"><img src="/img/logo-cursos.jpg" alt="Logo Cursos Online" width="200"></a>
+          <ul class="menu">
+            <li><a href="#opcion1">Perfil</a></li>
+            <li><a href="#opcion2">Mis Cursos</a></li>
+          </ul>
+        </nav>
+
+        <main class="content">
+          <h1>Listado de Materias</h1>
+
+          <div class="materia-selector">
+            <label for="materia">Seleccione Materia:</label>
+            <select id="materia">
+              <option value="">Seleccionar Materia</option>
+              <option value="1">Matemáticas</option>
+              <option value="2">Física</option>
+              <option value="3">Química</option>
+            </select>
+          </div>
+
+          <div id="lecciones-container">
+            <div id="materia-1" class="lecciones" style="display: none;">
+              <h2>Matemáticas</h2>
+              <ul>
+                <li>
+                  <h3>Introducción a las Ecuaciones Lineales</h3>
+                  <p>En esta lección, aprenderemos sobre las ecuaciones lineales, sus propiedades básicas y cómo resolverlas.</p>
+                </li>
+                <li>
+                  <h3>Sistemas de Ecuaciones Lineales</h3>
+                  <p>En esta lección, estudiaremos los sistemas de ecuaciones lineales, sus métodos de resolución y aplicaciones.</p>
+                </li>
+              </ul>
+            </div>
+
+            <div id="materia-2" class="lecciones" style="display: none;">
+              <h2>Física</h2>
+              <ul>
+                <li>
+                  <h3>Mecánica del Movimiento Rectilíneo Uniforme</h3>
+                  <p>En esta lección, analizaremos el movimiento rectilíneo uniforme (MRU) y sus características.</p>
+                </li>
+                <li>
+                  <h3>Mecánica del Movimiento Rectilíneo Uniformemente Acelerado (MRUA)</h3>
+                  <p>En esta lección, estudiaremos el movimiento rectilíneo uniformemente acelerado (MRUA) y sus fórmulas.</p>
+                </li>
+              </ul>
+            </div>
+
+            <div id="materia-3" class="lecciones" style="display: none;">
+              <h2>Química</h2>
+              <ul>
+                <li>
+                  <h3>Estructura Atómica</h3>
+                  <p>En esta lección, conoceremos los componentes básicos del átomo y sus propiedades.</p>
+                </li>
+                <li>
+                  <h3>Tabla Periódica de los Elementos</h3>
+                  <p>En esta lección, exploraremos la tabla periódica de los elementos y su organización.</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </main>
+      </div>
+    </section>
+  </main>
+
+  <script type="text/javascript">
+    document.getElementById('materia').addEventListener('change', function() {
+      const selectedValue = this.value;
+      const leccionesContainers = document.querySelectorAll('.lecciones');
+      leccionesContainers.forEach(container => {
+        container.style.display = 'none';
+      });
+      if (selectedValue) {
+        document.getElementById('materia-' + selectedValue).style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>
